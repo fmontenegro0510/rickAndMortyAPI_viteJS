@@ -21,17 +21,14 @@ Por el momento no hay capturas
 
 ## Tecnologías Utilizadas
 
--   ReactJS
--   ViteJS
--   Tailwind CSS
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+![HtmlShield](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)![CSS3Shield](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)![JavascriptShield](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)![ReactShield](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
 
 ## Instalación
 
 1.  Clona este repositorio en tu máquina local.
-
-bashCopy code
-
-`git clone https://github.com/fmontenegro0510/rickAndMortyAPI_viteJS` 
+	`git clone https://github.com/fmontenegro0510/rickAndMortyAPI_viteJS` 
 
 2.  Navega hasta el directorio del proyecto.
 
@@ -68,5 +65,6 @@ Si deseas contribuir a este proyecto, sigue los siguientes pasos:
 
 ## Licencia
 Este proyecto se ofrece como software de código abierto y se puede utilizar de manera libre y sin restricciones.
+
 
 ![enter image description here](https://www.clarin.com/img/2018/07/17/rJesaETQ7_1256x620__1.jpg)
