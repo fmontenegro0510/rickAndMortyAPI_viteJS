@@ -8,7 +8,11 @@ import Footer from './components/Footer/Footer'
 
 function App() {
   const [characters, setCharacters] = useState([]);
-  const [filter, setFilter] = useState('');
+  // const [filter, setFilter] = useState('');
+
+  const [showModal, setShowModal] = useState(false);
+
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,17 +28,30 @@ function App() {
     fetchData();
   }, []);
 
-  const filteredCharacters = characters.filter(character =>
-    character.name.toLowerCase().includes(filter.toLowerCase())
-  );
+  // const filteredCharacters = characters.filter(character =>
+  //   character.name.toLowerCase().includes(filter.toLowerCase())
+  // );
 
   return (
     <>
+
+
+
+
+
+
 <Header />
 <Search />
-<CardList />
+<CardList data={characters} />
 <Footer />
     </>
+
+
+
+
+
+
+
   )
 }
 
