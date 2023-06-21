@@ -2,7 +2,7 @@ import React from 'react'
 
 const Card = ({character}) => {
 
-  const {id, name, status, species, gender, image} = character
+  const {id, name, status, species, gender, image, } = character
 
 
   return (
