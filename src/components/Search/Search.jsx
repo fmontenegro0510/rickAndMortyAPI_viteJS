@@ -8,7 +8,8 @@ const Search = () => {
           <div className="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
             <div className="relative flex-grow w-full">
               <h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">
-                Rick and Morty API{" "}
+              ubba lubba dub dub, Ingrese el nombre del personaje que desea
+                buscar{" "}
               </h1>
               <p className=" mx-auto leading-relaxed text-base">
                 Wubba lubba dub dub, Ingrese el nombre del personaje que desea

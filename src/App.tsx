@@ -31,27 +31,19 @@ function App() {
   // const filteredCharacters = characters.filter(character =>
   //   character.name.toLowerCase().includes(filter.toLowerCase())
   // );
-
+  const orderChar = characters.sort((a, b) => {
+    if (a.name < b.name) {
+      return -1;
+    }
+  })
+  console.log(orderChar)
   return (
     <>
-
-
-
-
-
-
-<Header />
-<Search />
-<CardList data={characters} />
-<Footer />
+      <Header />
+      <Search />
+      <CardList data={characters} />
+      <Footer />
     </>
-
-
-
-
-
-
-
   )
 }
 
