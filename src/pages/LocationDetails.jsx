@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getCharacter } from '../utils/Api';
+import { getLocation } from '../utils/Api';
 import Loader from '../components/Loader/Loader';
 import Error from '../components/Error/Error';
 
-const CharacterDetails = () => {
+const LocationDetails = () => {
   const { id } = useParams();
-  const [character, setCharacter] = useState(null);
+  const [location, setLocation] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetchCharacter();
-  }, [id]);
+    fetchLocation();
+  }, []);
 
-  const fetchCharacter = async () => {
+  const fetchLocation = async () => {
     setLoading(true);
     setError('');
 
     try {
-      const response = await getCharacter(id);
+      const response = await getLocation(id);
       const data = await response.json();
-      setCharacter(data);
+      setLocation(data);
     } catch (error) {
-      setError('Error fetching character');
+      setError('Error fetching location');
     } finally {
       setLoading(false);
     }
@@ -39,17 +39,16 @@ const CharacterDetails = () => {
 
   return (
     <div>
-      <h1>Character Details</h1>
-      {character && (
+      <h1>Location Details</h1>
+      {location && (
         <div>
-          <h2>{character.name}</h2>
-          <p>Status: {character.status}</p>
-          <p>Species: {character.species}</p>
-          {/* Render more character details */}
+          <h2>{location.name}</h2>
+          <p>Type: {location.type}</p>
+          <p>Dimension: {location.dimension}</p>
         </div>
       )}
     </div>
   );
 };
 
-export default CharacterDetails;
+export default LocationDetails;

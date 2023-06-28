@@ -1,30 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getEpisodes } from '../utils/Api';
+import { getLocations } from '../utils/Api';
 import Loader from '../components/Loader/Loader';
 import Error from '../components/Error/Error';
-import Sortable from '../utils/SortableList';
+import SortableList from '../utils/SortableList';
 
-const EpisodeList = () => {
-  const [episodes, setEpisodes] = useState([]);
+const LocationList = () => {
+  const [locations, setLocations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [isSorted, setIsSorted] = useState(false);
 
   useEffect(() => {
-    fetchEpisodes();
+    fetchLocations();
   }, []);
 
-  const fetchEpisodes = async () => {
+  const fetchLocations = async () => {
     setLoading(true);
     setError('');
 
     try {
-      const response = await getEpisodes();
+      const response = await getLocations();
       const data = await response.json();
-      setEpisodes(data.results);
+      setLocations(data.results);
     } catch (error) {
-      setError('Error fetching episodes');
+      setError('Error fetching locations');
     } finally {
       setLoading(false);
     }
@@ -48,19 +48,19 @@ const EpisodeList = () => {
     return <Error message={error} />;
   }
 
-  const sortedEpisodes = sortItems(isSorted, episodes);
+  const sortedLocations = sortItems(isSorted, locations);
 
   return (
     <div>
-      <h1>Episode List</h1>
-      <Sortable
-        items={sortedEpisodes}
+      <h1>Location List</h1>
+      <SortableList
+        items={sortedLocations}
         onSort={(isChecked) => setIsSorted(isChecked)}
       />
-      <ul>
-        {sortedEpisodes.map((episode) => (
-          <li key={episode.id}>
-            <Link to={`/episodios/${episode.id}`}>{episode.name}</Link>
+      <ul>   
+        {sortedLocations.map((location) => (
+          <li key={location.id}>
+            <Link to={`/ubicaciones/${location.id}`}>{location.name}</Link>
           </li>
         ))}
       </ul>
@@ -68,4 +68,4 @@ const EpisodeList = () => {
   );
 };
 
-export default EpisodeList;
+export default LocationList ;

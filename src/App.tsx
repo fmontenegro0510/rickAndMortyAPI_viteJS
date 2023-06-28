@@ -6,8 +6,8 @@ import EpisodeList from './pages/EpisodeList';
 import EpisodeDetails from './pages/EpisodeDetails';
 import LocationList from './pages/LocationList';
 import LocationDetails from './pages/LocationDetails';
-import Error from './components/Error';
-import Loader from './components/Loader';
+import Error from './components/Error/Error';
+import Loader from './components/Loader/Loader';
 
 const App = () => {
   return (

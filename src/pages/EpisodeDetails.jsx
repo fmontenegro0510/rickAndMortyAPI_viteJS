@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getEpisode } from '../api';
-import Loader from '../components/Loader';
-import Error from '../components/Error';
+import { getEpisode } from '../utils/Api';
+import Loader from '../components/Loader/Loader';
+import Error from '../components/Error/Error';
 
 const EpisodeDetails = () => {
   const { id } = useParams();

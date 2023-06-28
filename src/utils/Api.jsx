@@ -15,3 +15,13 @@ export const getEpisodes = async () => {
 export const getEpisode = async (id) => {
   return fetch(`${BASE_URL}/episode/${id}`);
 };
+
+export const getLocations = async () => {
+  return fetch(`${BASE_URL}/location`);
+};
+
+
+export const getLocation = async (id) => {
+  return fetch(`${BASE_URL}/location/${id}`);
+};
+

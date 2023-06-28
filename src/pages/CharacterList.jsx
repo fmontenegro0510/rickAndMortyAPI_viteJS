@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getCharacters } from '../api';
-import Loader from '../components/Loader';
-import Error from '../components/Error';
+import { getCharacters } from '../utils/Api';
+import Loader from '../components/Loader/Loader';
+import Error from '../components/Error/Error';
+import Sortable from '../utils/SortableList';
 
 const CharacterList = () => {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [isSorted, setIsSorted] = useState(false);
 
   useEffect(() => {
     fetchCharacters();
@@ -28,6 +30,16 @@ const CharacterList = () => {
     }
   };
 
+  const sortItems = (isChecked, items) => {
+    if (isChecked) {
+      const sortedItems = [...items].sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+      return sortedItems;
+    }
+    return items;
+  };
+
   if (loading) {
     return <Loader />;
   }
@@ -36,11 +48,17 @@ const CharacterList = () => {
     return <Error message={error} />;
   }
 
+  const sortedCharacters = sortItems(isSorted, characters);
+
   return (
     <div>
       <h1>Character List</h1>
+      <Sortable
+        items={sortedCharacters}
+        onSort={(isChecked) => setIsSorted(isChecked)}
+      />
       <ul>
-        {characters.map((character) => (
+        {sortedCharacters.map((character) => (
           <li key={character.id}>
             <Link to={`/personajes/${character.id}`}>{character.name}</Link>
           </li>
