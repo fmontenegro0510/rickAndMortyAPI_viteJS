@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getCharacter } from '../api';
+import { getCharacter } from '../utils/Api';
 import Loader from '../components/Loader';
 import Error from '../components/Error';
 

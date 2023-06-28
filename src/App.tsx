@@ -1,50 +1,49 @@
-import { useState, useEffect } from 'react'
-import Header from './components/Header/Header'
-import Search from './components/Search/Search'
-import CardList from './components/CardsList/CardList.jsx'
-import Footer from './components/Footer/Footer'
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import CharacterList from './pages/CharacterList';
+import CharacterDetails from './pages/CharacterDetails';
+import EpisodeList from './pages/EpisodeList';
+import EpisodeDetails from './pages/EpisodeDetails';
+import LocationList from './pages/LocationList';
+import LocationDetails from './pages/LocationDetails';
+import Error from './components/Error';
+import Loader from './components/Loader';
 
-
-
-function App() {
-  const [characters, setCharacters] = useState([]);
-  // const [filter, setFilter] = useState('');
-
-  const [showModal, setShowModal] = useState(false);
-
-
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://rickandmortyapi.com/api/character');
-        const data = await response.json();
-        setCharacters(data.results);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  // const filteredCharacters = characters.filter(character =>
-  //   character.name.toLowerCase().includes(filter.toLowerCase())
-  // );
-  const orderChar = characters.sort((a, b) => {
-    if (a.name < b.name) {
-      return -1;
-    }
-  })
-  console.log(orderChar)
+const App = () => {
   return (
-    <>
-      <Header />
-      <Search />
-      <CardList data={characters} />
-      <Footer />
-    </>
-  )
-}
+    <Router>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/personajes">Personajes</Link>
+          </li>
+          <li>
+            <Link to="/episodios">Episodios</Link>
+          </li>
+          <li>
+            <Link to="/ubicaciones">Ubicaciones</Link>
+          </li>
+        </ul>
+      </nav>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/personajes" component={CharacterList} />
+        <Route exact path="/personajes/:id" component={CharacterDetails} />
+        <Route exact path="/episodios" component={EpisodeList} />
+        <Route exact path="/episodios/:id" component={EpisodeDetails} />
+        <Route exact path="/ubicaciones" component={LocationList} />
+        <Route exact path="/ubicaciones/:id" component={LocationDetails} />
+        <Route component={Error} />
+      </Switch>
+    </Router>
+  );
+};
 
-export default App
+const Home = () => {
+  return <h1>Home Page</h1>;
+};
+
+export default App;
