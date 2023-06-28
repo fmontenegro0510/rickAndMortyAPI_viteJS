@@ -10,6 +10,8 @@ const CharacterList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [isSorted, setIsSorted] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+
 
   useEffect(() => {
     fetchCharacters();
@@ -49,16 +51,28 @@ const CharacterList = () => {
   }
 
   const sortedCharacters = sortItems(isSorted, characters);
+  
+  const filteredCharacters = sortedCharacters.filter((character) =>
+  character.name.toLowerCase().includes(searchTerm.toLowerCase())
+);
 
   return (
     <div>
       <h1>Character List</h1>
+
+      <input
+        type="text"
+        placeholder="Buscar personaje"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       <Sortable
-        items={sortedCharacters}
+        items={filteredCharacters}
         onSort={(isChecked) => setIsSorted(isChecked)}
+        idField="id"
       />
       <ul>
-        {sortedCharacters.map((character) => (
+        {filteredCharacters.map((character) => (
           <li key={character.id}>
             <Link to={`/personajes/${character.id}`}>{character.name}</Link>
           </li>

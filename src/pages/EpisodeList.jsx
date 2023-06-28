@@ -10,6 +10,8 @@ const EpisodeList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [isSorted, setIsSorted] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+
 
   useEffect(() => {
     fetchEpisodes();
@@ -49,16 +51,27 @@ const EpisodeList = () => {
   }
 
   const sortedEpisodes = sortItems(isSorted, episodes);
+  
+  const filteredEpisodes = sortedEpisodes.filter((episode) =>
+  episode.name.toLowerCase().includes(searchTerm.toLowerCase())
+);
 
   return (
     <div>
       <h1>Episode List</h1>
+      <input
+        type="text"
+        placeholder="Buscar episodio"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       <Sortable
-        items={sortedEpisodes}
+        items={filteredEpisodes}
         onSort={(isChecked) => setIsSorted(isChecked)}
+        idField="id"
       />
       <ul>
-        {sortedEpisodes.map((episode) => (
+        {filteredEpisodes.map((episode) => (
           <li key={episode.id}>
             <Link to={`/episodios/${episode.id}`}>{episode.name}</Link>
           </li>

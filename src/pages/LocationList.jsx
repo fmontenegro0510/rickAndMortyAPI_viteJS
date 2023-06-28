@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import { getLocations } from '../utils/Api';
 import Loader from '../components/Loader/Loader';
 import Error from '../components/Error/Error';
-import SortableList from '../utils/SortableListLocation';
+import Sortable from '../utils/SortableListLocation';
 
 const LocationList = () => {
   const [locations, setLocations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [isSorted, setIsSorted] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     fetchLocations();
@@ -50,15 +51,26 @@ const LocationList = () => {
 
   const sortedLocations = sortItems(isSorted, locations);
 
+  const filteredLocations = sortedLocations.filter((location) =>
+  location.name.toLowerCase().includes(searchTerm.toLowerCase())
+);
+
   return (
     <div>
       <h1>Location List</h1>
-      <SortableList
-        items={sortedLocations}
-        onSort={(isChecked) => setIsSorted(isChecked)}
+      <input
+        type="text"
+        placeholder="Buscar ubicación"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <ul>   
-        {sortedLocations.map((location) => (
+      <Sortable
+        items={filteredLocations}
+        onSort={(isChecked) => setIsSorted(isChecked)}
+        idField="id"
+      />
+      <ul>
+        {filteredLocations.map((location) => (
           <li key={location.id}>
             <Link to={`/ubicaciones/${location.id}`}>{location.name}</Link>
           </li>
