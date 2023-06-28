@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { getLocations } from '../utils/Api';
 import Loader from '../components/Loader/Loader';
 import Error from '../components/Error/Error';
-import SortableList from '../utils/SortableList';
+import SortableList from '../utils/SortableListLocation';
 
 const LocationList = () => {
   const [locations, setLocations] = useState([]);

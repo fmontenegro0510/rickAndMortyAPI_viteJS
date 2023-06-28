@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { getEpisodes } from '../utils/Api';
 import Loader from '../components/Loader/Loader';
 import Error from '../components/Error/Error';
-import Sortable from '../utils/SortableList';
+import Sortable from '../utils/SortableListEpisode';
 
 const EpisodeList = () => {
   const [episodes, setEpisodes] = useState([]);
