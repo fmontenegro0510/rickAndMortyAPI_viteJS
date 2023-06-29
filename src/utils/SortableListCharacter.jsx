@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Card from '../components/Card/Card';
 
 const Sortable = ({ items, onSort, idField }) => {
   const [isChecked, setIsChecked] = useState(false);
@@ -25,7 +26,7 @@ const Sortable = ({ items, onSort, idField }) => {
           <li key={character.id}>
             <Link to={`/personajes/${character.id}`}>{character.name}</Link>
           </li>
-        ))}
+         ))}
       </ul>
     </div>
   );

@@ -4,8 +4,6 @@ import { getCharacters } from '../utils/Api';
 import Loader from '../components/Loader/Loader';
 import Error from '../components/Error/Error';
 import Sortable from '../utils/SortableListCharacter';
-
-
 import Card from '../components/Card/Card';
 
 
@@ -73,7 +71,7 @@ const CharacterList = () => {
 
   return (
     <div>
-      <h1>Character List</h1>
+      <h1>Character List-</h1>
 
       <input
         type="text"
@@ -86,15 +84,6 @@ const CharacterList = () => {
         onSort={(isChecked) => setIsSorted(isChecked)}
         idField="id"
       />
-      <ul>
-        {filteredCharacters.map((character) => (
-          <li key={character.id}>
-            <Link to={`/personajes/${character.id}`}>{character.name}</Link>
-
-           
-          </li>
-        ))}
-      </ul>
       <div>
         <button onClick={handlePrevPage}>Anterior</button>
         <button onClick={handleNextPage}>Siguiente</button>
@@ -102,5 +91,6 @@ const CharacterList = () => {
     </div>
   );
 };
+
 
 export default CharacterList;

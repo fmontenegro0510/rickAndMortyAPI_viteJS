@@ -15,7 +15,12 @@ const CardList = ( {data} ) => {
         </div>
       </section>
     </>
+
+
+
   );
 }
 
 export default CardList
+
+
