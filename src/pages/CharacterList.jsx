@@ -11,18 +11,19 @@ const CharacterList = () => {
   const [error, setError] = useState('');
   const [isSorted, setIsSorted] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [page, setPage] = useState(1);
 
 
   useEffect(() => {
     fetchCharacters();
-  }, []);
+  }, [page]);
 
   const fetchCharacters = async () => {
     setLoading(true);
     setError('');
 
     try {
-      const response = await getCharacters();
+      const response = await getCharacters(page);
       const data = await response.json();
       setCharacters(data.results);
     } catch (error) {
@@ -40,6 +41,17 @@ const CharacterList = () => {
       return sortedItems;
     }
     return items;
+  };
+
+
+  const handleNextPage = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePrevPage = () => {
+    if (page > 1) {
+      setPage((prevPage) => prevPage - 1);
+    }
   };
 
   if (loading) {
@@ -78,6 +90,10 @@ const CharacterList = () => {
           </li>
         ))}
       </ul>
+      <div>
+        <button onClick={handlePrevPage}>Anterior</button>
+        <button onClick={handleNextPage}>Siguiente</button>
+      </div>
     </div>
   );
 };
