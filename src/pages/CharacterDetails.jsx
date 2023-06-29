@@ -4,6 +4,8 @@ import { getCharacter } from '../utils/Api';
 import Loader from '../components/Loader/Loader';
 import Error from '../components/Error/Error';
 
+import Card from '../components/Card/Card';
+
 const CharacterDetails = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState(null);
@@ -38,15 +40,19 @@ const CharacterDetails = () => {
   }
 
   return (
+    // const {id, name, status, species, gender, image } = character
     <div>
       <h1>Character Details</h1>
       {character && (
-        <div>
-          <h2>{character.name}</h2>
-          <p>Status: {character.status}</p>
-          <p>Species: {character.species}</p>
-          {/* Render more character details */}
-        </div>
+         <Card character={character}  key={character.id} />
+       // <div>
+        //  <h2>{character.name}</h2>
+         // <p>Status: {character.status}</p>
+         // <p>Species: {character.species}</p>
+         // {/* Render more character details */}
+        //</div>    
+
+
       )}
     </div>
   );
