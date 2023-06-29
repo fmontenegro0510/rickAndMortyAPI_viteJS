@@ -50,7 +50,7 @@ const CharacterList = () => {
   };
 
   const handlePrevPage = () => {
-    if (page > 1) {
+    if (page > 1 && page <= 42) {
       setPage((prevPage) => prevPage - 1);
     }
   };
@@ -71,8 +71,6 @@ const CharacterList = () => {
 
   return (
     <div>
-      <h1>Character List-</h1>
-
       <input
         type="text"
         placeholder="Buscar personaje"
@@ -84,9 +82,10 @@ const CharacterList = () => {
         onSort={(isChecked) => setIsSorted(isChecked)}
         idField="id"
       />
-    <div className="flex flex-col items-center">
-        <button onClick={handlePrevPage}>Anterior</button>
-        <button onClick={handleNextPage}>Siguiente</button>
+      <div className="flex justify-center items-center">
+        <h2 className="text-gray-900 title-font font-medium mr-1"> <button onClick={handlePrevPage}>Anterior</button></h2>
+        <div className="text-slate-500"> {page} / 42 </div>
+        <h2 className="text-gray-900 title-font font-medium ml-2"><button onClick={handleNextPage}> Siguiente </button></h2>
       </div>
     </div>
   );

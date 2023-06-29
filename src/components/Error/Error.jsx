@@ -1,7 +1,9 @@
 import React from 'react';
+import Header from '../Header/Header';
 
 const Error = ({ message }) => {
   return (
+    <>
 
   <div className="flex h-[calc(100vh-80px)] items-center justify-center p-5 bg-white w-full">
   <div className="text-center">
@@ -14,6 +16,8 @@ const Error = ({ message }) => {
     <p className="text-slate-600 mt-5 lg:text-lg">la consulta realizada, a producido un error.</p>
   </div>
 </div>
+    </>
+
 );
 };
 
