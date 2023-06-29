@@ -8,26 +8,16 @@ import LocationList from './pages/LocationList';
 import LocationDetails from './pages/LocationDetails';
 import Error from './components/Error/Error';
 import Loader from './components/Loader/Loader';
+import Header from './components/Header/Header'
+import Search from './components/Search/Search'
+import CardList from './components/CardsList/CardList.jsx'
+import Footer from './components/Footer/Footer'
 
 const App = () => {
   return (
     <Router>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/personajes">Personajes</Link>
-          </li>
-          <li>
-            <Link to="/episodios">Episodios</Link>
-          </li>
-          <li>
-            <Link to="/ubicaciones">Ubicaciones</Link>
-          </li>
-        </ul>
-      </nav>
+      <Header />
+      <Search />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/personajes" component={CharacterList} />

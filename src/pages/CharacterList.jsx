@@ -5,6 +5,10 @@ import Loader from '../components/Loader/Loader';
 import Error from '../components/Error/Error';
 import Sortable from '../utils/SortableListCharacter';
 
+
+import Card from '../components/Card/Card';
+
+
 const CharacterList = () => {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -86,6 +90,8 @@ const CharacterList = () => {
         {filteredCharacters.map((character) => (
           <li key={character.id}>
             <Link to={`/personajes/${character.id}`}>{character.name}</Link>
+
+           
           </li>
         ))}
       </ul>

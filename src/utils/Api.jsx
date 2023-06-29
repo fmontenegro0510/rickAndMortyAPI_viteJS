@@ -10,7 +10,6 @@ export const getCharacter = async (id) => {
 
 export const getEpisodes = async (page = 1) => {
   return fetch(`${BASE_URL}/episode?page=${page}`);
-  // return fetch(`${BASE_URL}/episode`);
 };
 
 export const getEpisode = async (id) => {
@@ -19,7 +18,6 @@ export const getEpisode = async (id) => {
 
 export const getLocations = async (page = 1) => {
   return fetch(`${BASE_URL}/location?page=${page}`);
-  // return fetch(`${BASE_URL}/location`);
 };
 
 

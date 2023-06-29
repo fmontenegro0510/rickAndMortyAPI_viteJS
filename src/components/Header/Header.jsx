@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import RickLogo from '../../assets/rick-sanchez.svg'
 import MortyLogo from '../../assets/morty-smith.svg'
 import Github from '../../assets/github.svg'
@@ -35,25 +36,25 @@ const Header = () => {
           </div>          
         </div>
         <ul className="hidden absolute top-8rem left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6" >
-              <li><a className="text-sm text-gray-400 hover:text-blue-500 hover:font-bold" href="#">Inicio</a></li>
+              <li><a className="text-sm text-gray-400 hover:text-blue-500 hover:font-bold"><Link to="/">Home</Link></a></li>
               <li className="text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" className="w-4 h-4 current-fill" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                 </svg>
               </li>
-              <li><a className="text-sm text-gray-400 hover:text-blue-500 hover:font-bold" href="#">Personajes</a></li>
+              <li><a className="text-sm text-gray-400 hover:text-blue-500 hover:font-bold"><Link to="/personajes">Personajes</Link></a></li>
               <li className="text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" className="w-4 h-4 current-fill" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                 </svg>
               </li>
-              <li><a className="text-sm text-gray-400 hover:text-blue-500 hover:font-bold" href="#">Ubicaciones</a></li>
+              <li><a className="text-sm text-gray-400 hover:text-blue-500 hover:font-bold"><Link to="/ubicaciones">Ubicaciones</Link></a></li>
               <li className="text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" className="w-4 h-4 current-fill" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                 </svg>
               </li>
-              <li><a className="text-sm text-gray-400 hover:text-blue-500  hover:font-bold" href="#">Episodios</a></li>
+              <li><a className="text-sm text-gray-400 hover:text-blue-500  hover:font-bold"><Link to="/episodios">Episodios</Link></a></li>
 
             </ul>
       </header>
