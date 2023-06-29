@@ -84,7 +84,7 @@ const CharacterList = () => {
         onSort={(isChecked) => setIsSorted(isChecked)}
         idField="id"
       />
-      <div>
+    <div className="flex flex-col items-center">
         <button onClick={handlePrevPage}>Anterior</button>
         <button onClick={handleNextPage}>Siguiente</button>
       </div>

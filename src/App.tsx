@@ -26,7 +26,9 @@ const App = () => {
         <Route exact path="/ubicaciones/:id" component={LocationDetails} />
         <Route component={Error} />
       </Switch>
+      <Footer />
     </Router>
+    
   );
 };
 

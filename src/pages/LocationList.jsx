@@ -82,13 +82,13 @@ const LocationList = () => {
         onSort={(isChecked) => setIsSorted(isChecked)}
         idField="id"
       />
-      <ul>
+      {/* <ul>
         {filteredLocations.map((location) => (
           <li key={location.id}>
             <Link to={`/ubicaciones/${location.id}`}>{location.name}</Link>
           </li>
         ))}
-      </ul>
+      </ul> */}
       <div>
         <button onClick={handlePrevPage}>Anterior</button>
         <button onClick={handleNextPage}>Siguiente</button>

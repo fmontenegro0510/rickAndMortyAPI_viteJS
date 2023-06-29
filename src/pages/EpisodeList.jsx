@@ -81,13 +81,13 @@ const EpisodeList = () => {
         onSort={(isChecked) => setIsSorted(isChecked)}
         idField="id"
       />
-      <ul>
+      {/* <ul>
         {filteredEpisodes.map((episode) => (
           <li key={episode.id}>
             <Link to={`/episodios/${episode.id}`}>{episode.name}</Link>
           </li>
         ))}
-      </ul>
+      </ul> */}
       <div>
         <button onClick={handlePrevPage}>Anterior</button>
         <button onClick={handleNextPage}>Siguiente</button>
