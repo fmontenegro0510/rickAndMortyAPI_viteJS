@@ -11,19 +11,20 @@ const EpisodeList = () => {
   const [error, setError] = useState('');
   const [isSorted, setIsSorted] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     fetchEpisodes();
-  }, []);
+  }, [page]);
 
   const fetchEpisodes = async () => {
     setLoading(true);
     setError('');
 
     try {
-      const response = await getEpisodes();
+      const response = await getEpisodes(page);
       const data = await response.json();
+      console.log(data.results)
       setEpisodes(data.results);
     } catch (error) {
       setError('Error fetching episodes');
@@ -40,6 +41,16 @@ const EpisodeList = () => {
       return sortedItems;
     }
     return items;
+  };
+
+  const handleNextPage = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePrevPage = () => {
+    if (page > 1) {
+      setPage((prevPage) => prevPage - 1);
+    }
   };
 
   if (loading) {
@@ -77,6 +88,10 @@ const EpisodeList = () => {
           </li>
         ))}
       </ul>
+      <div>
+        <button onClick={handlePrevPage}>Anterior</button>
+        <button onClick={handleNextPage}>Siguiente</button>
+      </div>
     </div>
   );
 };

@@ -13,7 +13,6 @@ const CharacterList = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [page, setPage] = useState(1);
 
-
   useEffect(() => {
     fetchCharacters();
   }, [page]);
@@ -25,6 +24,7 @@ const CharacterList = () => {
     try {
       const response = await getCharacters(page);
       const data = await response.json();
+      console.log(data.results)
       setCharacters(data.results);
     } catch (error) {
       setError('Error fetching characters');
@@ -42,7 +42,6 @@ const CharacterList = () => {
     }
     return items;
   };
-
 
   const handleNextPage = () => {
     setPage((prevPage) => prevPage + 1);

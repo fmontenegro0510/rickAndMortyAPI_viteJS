@@ -11,17 +11,19 @@ const LocationList = () => {
   const [error, setError] = useState('');
   const [isSorted, setIsSorted] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [page, setPage] = useState(1);
+
 
   useEffect(() => {
     fetchLocations();
-  }, []);
+  }, [page]);
 
   const fetchLocations = async () => {
     setLoading(true);
     setError('');
 
     try {
-      const response = await getLocations();
+      const response = await getLocations(page);
       const data = await response.json();
       setLocations(data.results);
     } catch (error) {
@@ -40,6 +42,17 @@ const LocationList = () => {
     }
     return items;
   };
+
+  const handleNextPage = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePrevPage = () => {
+    if (page > 1) {
+      setPage((prevPage) => prevPage - 1);
+    }
+  };
+
 
   if (loading) {
     return <Loader />;
@@ -76,6 +89,10 @@ const LocationList = () => {
           </li>
         ))}
       </ul>
+      <div>
+        <button onClick={handlePrevPage}>Anterior</button>
+        <button onClick={handleNextPage}>Siguiente</button>
+      </div>
     </div>
   );
 };
