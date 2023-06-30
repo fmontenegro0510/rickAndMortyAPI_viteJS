@@ -6,8 +6,8 @@ const Error = ({ message }) => {
   return (
     <>
       <div className="flex h-[calc(100vh-80px)] items-center justify-center p-5 bg-white w-full">
-        <div className="text-center align-middle  ">
-          <img src={E} alt="" />
+        <div className="text-center items-center -webkit-center">
+          <img className="justify-center items-center" src={E} alt="" />
           <h1 className="mt-5 text-[36px] font-bold text-slate-800 lg:text-[50px]">
             ¡Wubba lubba dub dub!
           </h1>
