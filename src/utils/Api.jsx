@@ -30,3 +30,6 @@ export const getLocationByName = async (name) => {
   return fetch(`${BASE_URL}/location/?name=${name}`);
 };
 
+export const getCharactersByEpisode = async () => {
+  return  fetch(`${BASE_URL}/character`);
+};
