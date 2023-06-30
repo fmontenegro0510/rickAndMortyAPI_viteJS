@@ -13,7 +13,7 @@ import Header from './components/Header/Header'
 import CardList from './components/CardsList/CardList.jsx'
 import Footer from './components/Footer/Footer'
 
-import RM from './assets/img/chill_rm.jpg'
+import RM from './assets/img/animated_chill.gif'
 import RMPortal from './assets/img/portal_rym.png'
 
 const App = () => {

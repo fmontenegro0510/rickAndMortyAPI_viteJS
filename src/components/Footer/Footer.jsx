@@ -1,5 +1,5 @@
 import React from 'react'
-import ShipRyM from '../../assets/shiprym.svg'
+import ShipRyM from '../../assets/img/portal_green.png'
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
           <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <img
-              className="w-10 h-10 text-white p-2 bg-white-500 rounded-full"
+              className="w-20 h-25 text-white p-2 bg-white-500 rounded-full"
               src={ShipRyM}
               alt="ship Rick and Morty"
             />
