@@ -41,34 +41,26 @@ const App = () => {
 const Home = () => {
   return (
     <>
-    <section className="text-gray-600 body-font">
-  <div className="container px-5 py-24 mx-auto flex flex-col">
-    <div className="lg:w-4/6 mx-auto">
-      <div className="rounded-lg h-64 overflow-hidden">
-        <img alt="Rick and Morty" className="object-cover object-center h-full w-full" src={RM} />
-      </div>
-      <div className="flex flex-col sm:flex-row mt-10">
-        <div className="sm:w-1/3 text-center sm:pr-8 sm:py-8">
-
-          <img alt="Rick and Morty" className="object-cover object-center h-full w-full" src={RMPortal} />
-
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 py-24 mx-auto flex flex-col">
+          <div className="lg:w-4/6 mx-auto">
+            <div className="rounded-lg h-64 overflow-hidden">
+              <img alt="Rick and Morty" className="object-cover object-center h-full w-full" src={RM} />
+            </div>
+            <div className="flex flex-col sm:flex-row mt-10">
+              <div className="sm:w-1/3 text-center sm:pr-8 sm:py-8">
+                <img alt="Rick and Morty" className="object-cover object-center h-full w-full" src={RMPortal} />
+              </div>
+              <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+                <p className="leading-relaxed text-lg mb-4 text-justify	">Prepárate para despegar en un viaje intergaláctico lleno de diversión y aventuras junto a tus personajes favoritos de la aclamada serie "Rick and Morty". Aquí, en nuestra página, hemos desbloqueado los secretos del Multiverso y hemos construido un enlace directo con el increíble universo animado de Rick Sanchez y su nieto Morty Smith.</p>
+                <p className="leading-relaxed text-lg mb-4 text-justify	">Así que adelante, aventurero, ponte tu bata de laboratorio, prepárate para un "Wubba lubba dub dub" y comienza a explorar todo lo que nuestra página tiene para ofrecerte.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
-          <p className="leading-relaxed text-lg mb-4 text-justify	">Prepárate para despegar en un viaje intergaláctico lleno de diversión y aventuras junto a tus personajes favoritos de la aclamada serie "Rick and Morty". Aquí, en nuestra página, hemos desbloqueado los secretos del Multiverso y hemos construido un enlace directo con el increíble universo animado de Rick Sanchez y su nieto Morty Smith.</p>
-          <p className="leading-relaxed text-lg mb-4 text-justify	">Así que adelante, aventurero, ponte tu bata de laboratorio, prepárate para un "Wubba lubba dub dub" y comienza a explorar todo lo que nuestra página tiene para ofrecerte.</p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-    
+      </section>
     </>
-  ) 
-  
-  
-  
-  ;
+  );
 };
 
 export default App;

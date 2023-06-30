@@ -45,7 +45,8 @@ const EpisodeDetails = () => {
           <h2>{episode.name}</h2>
           <p>Air Date: {episode.air_date}</p>
           <p>Episode: {episode.episode}</p>
-          {/* Render more episode details */}
+          <p>Episode: {episode.episode}</p>
+          
         </div>
       )}
     </div>

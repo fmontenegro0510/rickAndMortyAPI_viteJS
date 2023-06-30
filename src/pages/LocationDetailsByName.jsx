@@ -10,10 +10,9 @@ const LocationDetailsByName = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  console.log(name)
   useEffect(() => {
     fetchLocation();
-  }, []);
+  }, [name]);
 
   const fetchLocation = async () => {
     setLoading(true);
@@ -43,9 +42,9 @@ const LocationDetailsByName = () => {
       <h1>Location Details</h1>
       {location && (
         <div>
-          <h2>{location.name}</h2>
-          <p>Type: {location.type}</p>
-          <p>Dimension: {location.dimension}</p>
+          <h2>{location.results[0].name}</h2>
+          <p>Type: {location.results[0].type}</p>
+          <p>Dimension: {location.results[0].dimension}</p>
         </div>
       )}
     </div>

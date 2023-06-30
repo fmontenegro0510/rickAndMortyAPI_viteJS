@@ -24,7 +24,6 @@ const EpisodeList = () => {
     try {
       const response = await getEpisodes(page);
       const data = await response.json();
-      console.log(data.results)
       setEpisodes(data.results);
     } catch (error) {
       setError('Error fetching episodes');
@@ -81,13 +80,6 @@ const EpisodeList = () => {
         onSort={(isChecked) => setIsSorted(isChecked)}
         idField="id"
       />
-      {/* <ul>
-        {filteredEpisodes.map((episode) => (
-          <li key={episode.id}>
-            <Link to={`/episodios/${episode.id}`}>{episode.name}</Link>
-          </li>
-        ))}
-      </ul> */}
       <div>
         <button onClick={handlePrevPage}>Anterior</button>
         <button onClick={handleNextPage}>Siguiente</button>
