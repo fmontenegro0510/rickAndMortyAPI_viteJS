@@ -21,6 +21,7 @@ const EpisodeDetails = () => {
     try {
       const response = await getEpisode(id);
       const data = await response.json();
+      console.log(data)
       setEpisode(data);
     } catch (error) {
       setError('Error fetching episode');
@@ -45,8 +46,8 @@ const EpisodeDetails = () => {
           <h2>{episode.name}</h2>
           <p>Air Date: {episode.air_date}</p>
           <p>Episode: {episode.episode}</p>
-          <p>Episode: {episode.episode}</p>
-          
+
+         
         </div>
       )}
     </div>
