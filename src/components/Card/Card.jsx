@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Card = ({character}) => {
 
-  const {id, name, status, species, gender, image } = character
+  const {id, name, status, species, gender, image, origin } = character
 
 
   return (
@@ -16,6 +16,8 @@ const Card = ({character}) => {
           <p class="lg:w-2/3 mx-auto leading-relaxed text-base">{species}</p>
           <p class="lg:w-2/3 mx-auto leading-relaxed text-base">{gender}</p>
           <p class="lg:w-2/3 mx-auto leading-relaxed text-base">{status}</p>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">{origin.name}</p>
+
           <button>
         <Link to="/personajes">Volver</Link>
       </button>
