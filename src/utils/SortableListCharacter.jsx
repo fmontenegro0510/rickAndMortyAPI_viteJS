@@ -10,21 +10,23 @@ const Sortable = ({ items, onSort, idField }) => {
     setIsChecked(isChecked);
     onSort(isChecked);
   };
+  
 
   return (
 <>
 <section className="text-gray-600 body-font">
   <div className="container px-5 py-24 mx-auto">
 
-
-    <label>
-        Ordenar alfabéticamente:
+  <p class="text-l mt-2 text-gray-500 mb-8 w-full"> Ordenar alfabéticamente:   <label>
+        
         <input
           type="checkbox"
           checked={isChecked}
           onChange={handleCheckboxChange}
         />
-      </label>
+      </label></p>
+
+
     <div className="flex flex-wrap -m-2">
       {items.map((character) => (
         <div className="p-2 lg:w-1/4 md:w-1/2 w-full" key={character.id}>

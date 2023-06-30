@@ -11,7 +11,6 @@ const CharacterDetails = () => {
   const [character, setCharacter] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-
   useEffect(() => {
     fetchCharacter();
   }, [id]);
