@@ -25,3 +25,8 @@ export const getLocation = async (id) => {
   return fetch(`${BASE_URL}/location/${id}`);
 };
 
+
+export const getLocationByName = async (name) => {
+  return fetch(`${BASE_URL}/location/?name=${name}`);
+};
+

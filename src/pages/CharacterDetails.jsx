@@ -41,17 +41,8 @@ const CharacterDetails = () => {
   return (
     // const {id, name, status, species, gender, image } = character
     <div>
-      <h1>Character Details</h1>
       {character && (
          <Card character={character}  key={character.id} />
-       // <div>
-        //  <h2>{character.name}</h2>
-         // <p>Status: {character.status}</p>
-         // <p>Species: {character.species}</p>
-         // {/* Render more character details */}
-        //</div>    
-
-
       )}
     </div>
   );
