@@ -15,7 +15,7 @@ const Sortable = ({ items, onSort, idField }) => {
     <>
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
-          <p class="text-l mt-2 text-gray-500 mb-8 w-full">
+          <p className="text-l mt-2 text-gray-500 mb-8 w-full">
             {" "}
             Ordenar alfabéticamente:{" "}
             <label>
