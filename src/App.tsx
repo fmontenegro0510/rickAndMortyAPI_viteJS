@@ -8,9 +8,7 @@ import LocationList from './pages/LocationList';
 import LocationDetails from './pages/LocationDetails';
 import LocationDetailsByName from './pages/LocationDetailsByName';
 import Error from './components/Error/Error';
-import Loader from './components/Loader/Loader';
 import Header from './components/Header/Header'
-import CardList from './components/CardsList/CardList.jsx'
 import Footer from './components/Footer/Footer'
 
 import RM from './assets/img/animated_chill.gif'
