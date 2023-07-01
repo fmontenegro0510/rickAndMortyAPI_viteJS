@@ -45,13 +45,11 @@ const CharacterList = () => {
   };
 
   const handleNextPage = () => {
-    setPage((prevPage) => prevPage + 1);
+    page >= 1 && page <= 41 ? setPage((prevPage) => prevPage + 1) : null;
   };
 
   const handlePrevPage = () => {
-    if (page > 1 && page <= 42) {
-      setPage((prevPage) => prevPage - 1);
-    }
+    page > 1 && page <= 42 ? setPage((prevPage) => prevPage - 1) : null;
   };
 
   if (loading) {
