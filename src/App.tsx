@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import CharacterList from './pages/CharacterList';
 import CharacterDetails from './pages/CharacterDetails';
 import EpisodeList from './pages/EpisodeList';

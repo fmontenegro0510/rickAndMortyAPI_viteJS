@@ -25,7 +25,6 @@ const EpisodeDetails = () => {
     try {
       const response = await getEpisode(id);
       const data = await response.json();
-      console.log(data)
       setEpisode(data);
     } catch (error) {
       setError('Error fetching episode');
@@ -108,38 +107,30 @@ const EpisodeDetails = () => {
                 </a>
               </div>
             </div>
-            <div className="flex  lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-row ">
-              <div className="grid w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
-                <div className="flex flex-wrap -m-2">
-                  <ul>
-                    {charactersInEpisode.map((character) => (
-                      <div
-                        className="p-2 w-full"
-                        key={character.id}
-                      >
-                        <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-                          <img
-                            className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                            src={character.image}
-                            alt={character.name}
-                          />
-                          <div className="flex-grow">
-                            <Link to={`/personajes/${character.id}`}>
-                              <h2 className="text-gray-900 title-font font-medium">
-                                {character.name}
-                              </h2>
-                              <p className="text-gray-500">
-                                {character.species}
-                              </p>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </ul>
+            <h2 className="text-gray-900 text-lg title-font font-medium mb-2 text-center">Personajes que aparecen en este episodio:</h2>
+            <div class="flex flex-wrap -m-3 align-middle text-align-center justify-center"  >
+            {charactersInEpisode.map((character) => (
+              <div class="xl:w-1/6 md:w-1/4 p-3 " key={character.id}>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                  <Link to={`/personajes/${character.id}`}>
+                  <img
+                    class="h-25 rounded w-25 object-cover object-center mb-6"
+                    src={character.image}
+                    alt={character.name}
+                  />
+                  <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">
+                                    {character.species}
+
+                  </h3>
+                  <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
+                  {character.name}
+                  </h2>
+                  </Link>
                 </div>
               </div>
+              ))}
             </div>
+
           </div>
         </section>
       )}

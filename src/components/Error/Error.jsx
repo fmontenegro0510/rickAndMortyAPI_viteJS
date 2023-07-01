@@ -1,8 +1,7 @@
 import React from 'react';
-import Header from '../Header/Header';
 import E from '../../assets/img/fuck_you.gif'
 
-const Error = ({ message }) => {
+const Error = () => {
   return (
     <>
       <div className="flex h-[calc(100vh-80px)] items-center justify-center p-5 bg-white w-full">
