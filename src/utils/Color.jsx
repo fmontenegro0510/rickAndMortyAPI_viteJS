@@ -28,3 +28,28 @@
   };
 
   export const randomHex = Math.floor(Math.random() * 16777215).toString(16);
+
+
+ const generarNumero = (numero)=>{
+	return (Math.random()*numero).toFixed(0);
+}
+
+export const colorRGB = ()=>{
+	var coolor = "("+generarNumero(255)+"," + generarNumero(255) + "," + generarNumero(255) +")";
+	return coolor;
+}
+
+
+const generarLetra = ()=>{
+	var letras = ["a","b","c","d","e","f","0","1","2","3","4","5","6","7","8","9"];
+	var numero = (Math.random()*15).toFixed(0);
+	return letras[numero];
+}
+	
+export const colorHEX = ()=>{
+	var coolor = "";
+	for(var i=0;i<6;i++){
+		coolor = coolor + generarLetra() ;
+	}
+	return coolor;
+}
