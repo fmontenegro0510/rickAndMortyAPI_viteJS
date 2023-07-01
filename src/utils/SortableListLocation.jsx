@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {colorHEX} from '../utils/Color'
+import portal from '../assets/img/animated_portal.gif'
+
 
 const Sortable = ({ items, onSort, idField }) => {
   const [isChecked, setIsChecked] = useState(false);
@@ -30,8 +32,9 @@ const Sortable = ({ items, onSort, idField }) => {
           <div className="p-2 lg:w-1/4 md:w-1/2 w-full" key={location.id}>
             <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
               <div
-                className= {`bg-[#E0E7FF]` + ' w-20 h-20 rounded-full inline-flex items-center justify-center text-[#6366F1]  text-xl font-bold  mr-2' }>
-                {location.name.charAt(0)}
+                className= ' w-20 h-20 rounded-full inline-flex items-center justify-center text-[#6366F1]  text-xxl font-bold  mr-2'>
+                <img alt="team" class="w-20 h-20 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={portal} />
+                
               </div>
               <div className="flex-grow">
               <Link to={`/ubicaciones/${location.id}`}>

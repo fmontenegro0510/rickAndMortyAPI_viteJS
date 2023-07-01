@@ -1,13 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { goBack } from '../../utils/Navigator'
 
 const Card = ({character}) => {
 
   const {id, name, status, species, gender, image, origin } = character
 
-	const goBack = () => {
-    history.back()
-	}
 
 
   return (
